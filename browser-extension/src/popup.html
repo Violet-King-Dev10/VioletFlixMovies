@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VioletFlixTV Shield</title>
+    <link rel="stylesheet" href="../styles/popup.css">
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">VioletFlixTV Shield</p>
+          <h1>Ad blocker</h1>
+        </div>
+        <label class="switch" aria-label="Enable protection">
+          <input id="enabled" type="checkbox">
+          <span></span>
+        </label>
+      </header>
+
+      <section class="site-card">
+        <div>
+          <span class="muted">Current site</span>
+          <strong id="currentHost">Loading…</strong>
+        </div>
+        <button id="toggleSite" type="button">Allowlist</button>
+      </section>
+
+      <section class="grid">
+        <label><input id="blockAds" type="checkbox"> Ads</label>
+        <label><input id="blockTrackers" type="checkbox"> Trackers</label>
+        <label><input id="blockAnnoyances" type="checkbox"> Annoyances</label>
+        <label><input id="blockPopups" type="checkbox"> Popups</label>
+        <label><input id="cosmeticFiltering" type="checkbox"> Hide ad boxes</label>
+        <label><input id="strictVideoMode" type="checkbox"> Strict video mode</label>
+      </section>
+
+      <section class="stats">
+        <div><span id="ruleCount">0</span><small>rules loaded</small></div>
+        <div><span id="lastRefresh">Never</span><small>last refresh</small></div>
+      </section>
+
+      <p id="status" class="status"></p>
+
+      <footer class="actions">
+        <button id="refresh" class="primary" type="button">Refresh lists</button>
+        <button id="openOptions" type="button">More settings</button>
+      </footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
