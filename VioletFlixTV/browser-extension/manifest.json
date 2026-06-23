@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "VioletFlixTV Ad Guard",
+  "description": "A lightweight EasyList-powered ad blocker tuned for VioletFlixTV streaming pages, with daily list refreshes and quick popup controls.",
+  "version": "1.0.0",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "alarms",
+    "declarativeNetRequest",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "VioletFlixTV Shield",
+    "default_popup": "src/popup.html"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "options_page": "src/options.html"
+}

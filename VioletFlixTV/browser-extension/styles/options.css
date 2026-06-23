@@ -1,0 +1,31 @@
+:root {
+  color-scheme: dark;
+  --bg: #09090f;
+  --panel: #151722;
+  --text: #f9fafb;
+  --muted: #a1a1aa;
+  --accent: #f43f5e;
+  --line: rgba(255, 255, 255, 0.1);
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(circle at top left, #2a1020, transparent 34%), var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+.settings-shell { width: min(980px, calc(100% - 32px)); margin: 0 auto; padding: 42px 0; display: grid; gap: 18px; }
+header, .panel, footer { border: 1px solid var(--line); background: rgba(21, 23, 34, 0.92); border-radius: 22px; padding: 22px; }
+.eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; font-weight: 800; }
+h1, h2, p { margin-top: 0; }
+p { color: var(--muted); }
+.panel.split, .textareas { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.list-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.list-choice, .row, .field { display: grid; gap: 6px; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: #10131d; }
+.list-choice span { color: var(--muted); font-size: 12px; text-transform: uppercase; }
+input, textarea { width: 100%; margin-top: 6px; border-radius: 12px; border: 1px solid var(--line); background: #090b12; color: var(--text); padding: 10px; }
+input[type='checkbox'] { width: auto; accent-color: var(--accent); }
+textarea { resize: vertical; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+.status-box { display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 16px; border-radius: 18px; background: #0f111a; }
+.status-box strong { font-size: 28px; color: #fb7185; }
+.status-box span, .status { color: var(--muted); }
+footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+button { border: 1px solid var(--line); border-radius: 999px; padding: 11px 16px; color: var(--text); background: #232635; cursor: pointer; font-weight: 800; }
+button.primary { background: var(--accent); border-color: var(--accent); }
+.status[data-tone='warn'] { color: #fbbf24; }
+@media (max-width: 720px) { .panel.split, .textareas { grid-template-columns: 1fr; } footer { align-items: stretch; flex-direction: column; } }
